@@ -1,0 +1,39 @@
+NullObject
+==========
+
+Adds a :null_object option to ActiveRecord has_one and belongs_to associations for specifying an object to be returned in place of nil
+
+Implements the null object pattern as described in 'Refactoring - Ruby Edition' (Addison-Wesley)
+
+
+Example
+=======
+
+user.country = nil
+user.country.name
+=> 'Missing country'
+
+classs User < ActiveRecord::Base
+
+  belongs_to :country, :null_object => MissingCountry.instance
+  
+  def missing?
+    false
+  end
+  
+end
+
+class MissingCountry
+  
+  def missing?
+    true
+  end
+  
+  def name
+    'Unknown country'
+  end
+  
+end
+
+
+Copyright (c) 2008 Ingo Weiss, released under the MIT license
