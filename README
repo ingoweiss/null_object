@@ -5,6 +5,7 @@ Adds a :null_object option to ActiveRecord has_one and belongs_to associations f
 
 Implements the null object pattern as described in 'Refactoring - Ruby Edition' (Addison-Wesley)
 
+Just a very experimental start - use at your own peril. For feedback please contact me at ingo@ingoweiss.com
 
 Example
 =======
